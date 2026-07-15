@@ -1,1 +1,2 @@
 The starting of the key is TT so search for key using grep and piping it into sort | uniq -d.
+uniq -d returns the duplicates only as a single output.

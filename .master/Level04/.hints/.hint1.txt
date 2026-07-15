@@ -1,2 +1,2 @@
 ISO-style timestamps sort correctly as plain text. Redirect sort output into
-challenge/recovered_log.txt.
+challenge/recovered_log.txt. using ">" or "-o" as flag.

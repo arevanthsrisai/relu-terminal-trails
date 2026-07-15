@@ -16,12 +16,12 @@ Instead of traditional lectures, teams interact directly with the terminal to un
 
 ## Event Details
 
-- **Organizer:** ReLU.exe Technical Club
+- **Organizer:** ReLU Technical Club
 - **Platform:** Windows + Portable Git (Git Bash)
 - **Participants:** Team-based competition
 - **Mode:** Offline
 - **Levels:** 7
-- **Duration:** ~10 minutes
+- **Duration:** ~15 minutes
 
 ---
 
@@ -123,22 +123,6 @@ Participants gain hands-on experience with:
 - Pattern recognition
 - Basic algorithmic thinking
 - Working efficiently inside a terminal
-
----
-
-## Screenshots
-
-> Add screenshots or GIFs of the gameplay here.
-
----
-
-## Future Improvements
-
-- Additional challenge packs
-- Advanced Bash scripting levels
-- Git challenges
-- Networking challenges
-- Leaderboard dashboard
 
 ---
 

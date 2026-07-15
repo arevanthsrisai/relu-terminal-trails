@@ -23,7 +23,7 @@ Displays the last few lines of a file.
 
 Mission
 -------
-1. Work with the corrupted log as a large list of timestamped records.
+1. Work with the corrupted log as a large list of timestamped records which are unsorted.
 2. Create a recovered version whose records are in chronological order.
 3. Inspect only the beginning and end of the ordered result.
 4. Use the boundary records to determine what to submit to `verify`.

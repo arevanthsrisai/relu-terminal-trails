@@ -30,7 +30,7 @@ Print the characters inside them literally, without expanding variables.
 Mission
 -------
 1. Inspect the broken dispatch script.
-2. Repair its variable names and quoting so variable values expand correctly.
+2. Repair its quoting so variable values expand correctly.
 3. Run the script and compare its output with the mission requirements.
 4. Run `verify`, then run `access` after verification succeeds.
 

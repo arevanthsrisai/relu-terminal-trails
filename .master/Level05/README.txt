@@ -23,7 +23,7 @@ Searches text and displays only lines containing matching text.
 
 Mission
 -------
-1. The process to follow is mentioned inside analysis_not.txt file inside challenge
+1. The process to follow is mentioned inside analysis_note.txt file inside challenge
 2. Use terminal_history file to view the recovered command stream.
 3. Use a small pipeline to narrow the stream to credential-looking lines.
 4. Identify the credential that appears more than once.
