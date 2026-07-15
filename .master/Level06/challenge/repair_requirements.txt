@@ -1,0 +1,6 @@
+Expected output after repair:
+Dispatching NightShift to alpha
+Access key: TT-MAP-6194
+
+Keep the four assignments. Repair only the output lines using appropriate
+quoting and unambiguous variable expansion.

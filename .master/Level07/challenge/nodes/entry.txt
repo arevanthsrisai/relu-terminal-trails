@@ -1,0 +1,3 @@
+START_NODE=1
+NEXT=challenge/nodes/records/amber.node
+MESSAGE=Begin at the amber record.

@@ -1,0 +1,2 @@
+The final node says which ends matter: the last line of forward_route.txt and
+the first line of reverse_route.txt. These commands were introduced earlier.

@@ -1,0 +1,5 @@
+NEXT=END
+CLUE=Read challenge/routes/forward_route.txt and reverse_route.txt.
+CLUE=The forward route exposes its fragment at its last record.
+CLUE=The reverse route exposes its fragment at its first record.
+CLUE=Join the fragments with no spaces.

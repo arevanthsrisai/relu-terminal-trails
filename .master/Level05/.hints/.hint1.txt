@@ -1,0 +1,2 @@
+Pipe `history` into `grep` and narrow the output to credential-looking lines.
+Look for a pattern that appears more often than the others.

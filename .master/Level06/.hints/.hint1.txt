@@ -1,0 +1,2 @@
+Single quotes keep $variable text literal. Use double quotes when you need a
+variable's value to appear in output.

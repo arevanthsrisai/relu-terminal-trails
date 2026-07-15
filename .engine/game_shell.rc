@@ -1,0 +1,14 @@
+# Terminal Trials shell profile override
+if [ -n "${TERMINAL_TRIALS_ROOT:-}" ]; then
+    case ":$PATH:" in
+        *":$TERMINAL_TRIALS_ROOT:"*) ;;
+        *) PATH="$TERMINAL_TRIALS_ROOT:$PATH" ;;
+    esac
+    export PATH
+    hash -r 2>/dev/null || true
+fi
+
+unset PROMPT_COMMAND
+unset BASH_ENV
+unset -f __git_ps1 2>/dev/null || true
+export PS1='\u@\h \w\n\$ '

@@ -1,0 +1,1 @@
+Start at the level directory. The office is inside challenge/.

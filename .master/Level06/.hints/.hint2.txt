@@ -1,0 +1,2 @@
+When text touches a variable name, use braces. For example:
+${key_prefix}-${key_suffix}

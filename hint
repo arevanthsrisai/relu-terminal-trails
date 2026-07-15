@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# Terminal Trials hint command. Hints are hidden in each sector and revealed only
+# through this command so score and audit logs stay honest.
+
+set -euo pipefail
+
+GAME_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+. "$GAME_ROOT/.engine/ui.sh"
+. "$GAME_ROOT/.engine/progress.sh"
+. "$GAME_ROOT/.engine/logger.sh"
+
+ensure_game_directories "$GAME_ROOT"
+
+if ! progress_exists "$GAME_ROOT"; then
+    print_error "No active game found. Start Terminal Trials with start.sh first."
+    exit 1
+fi
+
+current_level=$(progress_get "$GAME_ROOT" CURRENT_LEVEL)
+level_key=$(progress_level_hint_key "$current_level")
+level_hints_used=$(progress_get "$GAME_ROOT" "$level_key")
+[ -n "$level_hints_used" ] || level_hints_used=0
+
+hint_dir="$GAME_ROOT/runtime/current/.hints"
+hint_number=$((level_hints_used + 1))
+if [ ! -d "$hint_dir" ] || ! find "$hint_dir" -maxdepth 1 -type f -name '.hint*.txt' -print -quit | grep . >/dev/null 2>&1; then
+    print_error "No hint is available for the current sector."
+    exit 1
+fi
+
+if [ "$level_hints_used" -ge 2 ]; then
+    printf '%s\n' '----------------------------------'
+    printf '%s\n' 'No more hints are available for this sector.'
+    printf '%s\n' '----------------------------------'
+    exit 0
+fi
+
+hint_file="$hint_dir/.hint${hint_number}.txt"
+if [ ! -f "$hint_file" ]; then
+    hint_file=$(find "$hint_dir" -maxdepth 1 -type f -name '.hint*.txt' | sort | sed -n '1p')
+fi
+
+printf '%s\n' 'Use this hint?'
+printf '%s\n' 'Cost: 150 points'
+printf '%s' '[Y/N] '
+IFS= read -r answer || exit 1
+answer=$(printf '%s' "$answer" | tr -d '[:cntrl:]')
+
+case "$answer" in
+    Y|y|YES|Yes|yes) ;;
+    *) exit 0 ;;
+esac
+
+progress_record_hint "$GAME_ROOT"
+progress_set_value "$GAME_ROOT" "$level_key" "$((level_hints_used + 1))"
+current_score=$(progress_calculate_sector_score "$GAME_ROOT")
+progress_set_value "$GAME_ROOT" CURRENT_SCORE "$current_score"
+
+printf 'Current Sector Score: %s / 1000\n' "$current_score"
+printf '%s\n' '----------------------------------'
+cat "$hint_file"
+printf '\n%s\n' '----------------------------------'

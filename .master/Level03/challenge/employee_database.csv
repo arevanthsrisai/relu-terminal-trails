@@ -1,0 +1,181 @@
+employee_id,account,department,status
+E-1041,noah.kumar,Student Services,disabled
+E-1042,zoe.kim,Library Systems,active
+E-1043,dylan.hassan,Security,suspended
+E-1044,elena.bell,HR,active
+E-1045,leo.iyer,Archive,active
+E-1046,jonas.rivera,Facilities,disabled
+E-1047,ethan.perera,Network Support,active
+E-1048,leah.lopez,Research,suspended
+E-1049,felix.bennett,Compliance,active
+E-1050,meera.young,Finance,active
+E-1051,miles.patel,IT,disabled
+E-1052,omar.ross,Operations,active
+E-1053,arun.morgan,Student Services,suspended
+E-1054,talia.scott,Library Systems,active
+E-1055,owen.nguyen,Security,active
+E-1056,kiara.stone,HR,disabled
+E-1057,amir.malik,Archive,active
+E-1058,aisha.watson,Facilities,suspended
+E-1059,caleb.wright,Network Support,active
+E-1060,priya.rao,Research,active
+E-1061,samir.mehta,Compliance,disabled
+E-1062,fatima.reed,Finance,active
+E-1063,dev.diaz,IT,suspended
+E-1064,sofia.ali,Operations,active
+E-1065,ravi.verma,Student Services,active
+E-1066,hana.singh,Library Systems,disabled
+E-1067,nolan.garcia,Security,active
+E-1068,anika.turner,HR,suspended
+E-1069,sana.das,Archive,active
+E-1070,maya.shah,Facilities,active
+E-1071,marco.foster,Network Support,disabled
+E-1072,amara.evans,Research,active
+E-1073,julian.ortiz,Compliance,suspended
+E-1074,tessa.park,Finance,active
+E-1075,liam.clark,IT,active
+E-1076,nina.gray,Operations,disabled
+E-1077,ian.brooks,Student Services,active
+E-1078,lucia.cole,Library Systems,suspended
+E-1079,adrian.nair,Security,active
+E-1080,mira.chen,HR,active
+E-1081,noah.kumar,Archive,disabled
+E-1082,zoe.kim,Facilities,active
+E-1083,dylan.hassan,Network Support,suspended
+E-1084,elena.bell,Research,active
+E-1085,leo.iyer,Compliance,active
+E-1086,jonas.rivera,Finance,disabled
+E-1087,ethan.perera,IT,active
+E-1088,leah.lopez,Operations,suspended
+E-1089,felix.bennett,Student Services,active
+E-1090,meera.young,Library Systems,active
+E-1091,miles.patel,Security,disabled
+E-1092,omar.ross,HR,active
+E-1093,arun.morgan,Archive,suspended
+E-1094,talia.scott,Facilities,active
+E-1095,owen.nguyen,Network Support,active
+E-1096,kiara.stone,Research,disabled
+E-1097,amir.malik,Compliance,active
+E-1098,aisha.watson,Finance,suspended
+E-1099,caleb.wright,IT,active
+E-1100,priya.rao,Operations,active
+E-1101,samir.mehta,Student Services,disabled
+E-1102,fatima.reed,Library Systems,active
+E-1103,dev.diaz,Security,suspended
+E-1104,sofia.ali,HR,active
+E-1105,ravi.verma,Archive,active
+E-1106,hana.singh,Facilities,disabled
+E-1107,nolan.garcia,Network Support,active
+E-1108,anika.turner,Research,suspended
+E-1109,sana.das,Compliance,active
+E-1110,maya.shah,Finance,active
+E-1111,marco.foster,IT,disabled
+E-1112,amara.evans,Operations,active
+E-1113,julian.ortiz,Student Services,suspended
+E-1114,tessa.park,Library Systems,active
+E-1115,liam.clark,Security,active
+E-1116,nina.gray,HR,disabled
+E-1117,ian.brooks,Archive,active
+E-1118,lucia.cole,Facilities,suspended
+E-1119,adrian.nair,Network Support,active
+E-1120,mira.chen,Research,active
+E-1121,noah.kumar,Compliance,disabled
+E-1122,zoe.kim,Finance,active
+E-1123,dylan.hassan,IT,suspended
+E-1124,elena.bell,Operations,active
+E-1125,leo.iyer,Student Services,active
+E-1126,jonas.rivera,Library Systems,disabled
+E-1127,ethan.perera,Security,active
+E-1128,leah.lopez,HR,suspended
+E-1129,felix.bennett,Archive,active
+E-1130,meera.young,Facilities,active
+E-1131,miles.patel,Network Support,disabled
+E-1132,omar.ross,Research,active
+E-1133,arun.morgan,Compliance,suspended
+E-1134,talia.scott,Finance,active
+E-1135,owen.nguyen,IT,active
+E-1136,kiara.stone,Operations,disabled
+E-1138,evelyn.kline,Finance,INFECTED
+E-1138,aisha.watson,Library Systems,suspended
+E-1139,caleb.wright,Security,active
+E-1140,priya.rao,HR,active
+E-1141,samir.mehta,Archive,disabled
+E-1142,fatima.reed,Facilities,active
+E-1143,dev.diaz,Network Support,suspended
+E-1144,sofia.ali,Research,active
+E-1145,ravi.verma,Compliance,active
+E-1146,hana.singh,Finance,disabled
+E-1147,nolan.garcia,IT,active
+E-1148,anika.turner,Operations,suspended
+E-1149,sana.das,Student Services,active
+E-1150,maya.shah,Library Systems,active
+E-1151,marco.foster,Security,disabled
+E-1152,amara.evans,HR,active
+E-1153,julian.ortiz,Archive,suspended
+E-1154,tessa.park,Facilities,active
+E-1155,liam.clark,Network Support,active
+E-1156,nina.gray,Research,disabled
+E-1157,ian.brooks,Compliance,active
+E-1158,lucia.cole,Finance,suspended
+E-1159,adrian.nair,IT,active
+E-1160,mira.chen,Operations,active
+E-1161,noah.kumar,Student Services,disabled
+E-1162,zoe.kim,Library Systems,active
+E-1163,dylan.hassan,Security,suspended
+E-1164,elena.bell,HR,active
+E-1165,leo.iyer,Archive,active
+E-1166,jonas.rivera,Facilities,disabled
+E-1167,ethan.perera,Network Support,active
+E-1168,leah.lopez,Research,suspended
+E-1169,felix.bennett,Compliance,active
+E-1170,meera.young,Finance,active
+E-1171,miles.patel,IT,disabled
+E-1172,omar.ross,Operations,active
+E-1173,arun.morgan,Student Services,suspended
+E-1174,talia.scott,Library Systems,active
+E-1175,owen.nguyen,Security,active
+E-1176,kiara.stone,HR,disabled
+E-1177,amir.malik,Archive,active
+E-1178,aisha.watson,Facilities,suspended
+E-1179,caleb.wright,Network Support,active
+E-1180,priya.rao,Research,active
+E-1181,samir.mehta,Compliance,disabled
+E-1182,fatima.reed,Finance,active
+E-1183,dev.diaz,IT,suspended
+E-1184,sofia.ali,Operations,active
+E-1185,ravi.verma,Student Services,active
+E-1186,hana.singh,Library Systems,disabled
+E-1187,nolan.garcia,Security,active
+E-1188,anika.turner,HR,suspended
+E-1189,sana.das,Archive,active
+E-1190,maya.shah,Facilities,active
+E-1191,marco.foster,Network Support,disabled
+E-1192,amara.evans,Research,active
+E-1193,julian.ortiz,Compliance,suspended
+E-1194,tessa.park,Finance,active
+E-1195,liam.clark,IT,active
+E-1196,nina.gray,Operations,disabled
+E-1197,ian.brooks,Student Services,active
+E-1198,lucia.cole,Library Systems,suspended
+E-1199,adrian.nair,Security,active
+E-1200,mira.chen,HR,active
+E-1201,noah.kumar,Archive,disabled
+E-1202,zoe.kim,Facilities,active
+E-1203,dylan.hassan,Network Support,suspended
+E-1204,elena.bell,Research,active
+E-1205,leo.iyer,Compliance,active
+E-1206,jonas.rivera,Finance,disabled
+E-1207,ethan.perera,IT,active
+E-1208,leah.lopez,Operations,suspended
+E-1209,felix.bennett,Student Services,active
+E-1210,meera.young,Library Systems,active
+E-1211,miles.patel,Security,disabled
+E-1212,omar.ross,HR,active
+E-1213,arun.morgan,Archive,suspended
+E-1214,talia.scott,Facilities,active
+E-1215,owen.nguyen,Network Support,active
+E-1216,kiara.stone,Research,disabled
+E-1217,amir.malik,Compliance,active
+E-1218,aisha.watson,Finance,suspended
+E-1219,caleb.wright,IT,active
+E-1220,priya.rao,Operations,active

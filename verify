@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+GAME_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+current_verify="$GAME_ROOT/runtime/current/verify.sh"
+
+if [ -f "$current_verify" ]; then
+    cd "$GAME_ROOT/runtime/current" || exit 1
+    exec bash "$current_verify" "$@"
+fi
+
+printf '%s\n' 'No active sector verify script is available.' >&2
+exit 1

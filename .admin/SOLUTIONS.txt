@@ -1,0 +1,4 @@
+Terminal Trials solution storage placeholder.
+
+This engine intentionally ships with no puzzles, challenges, or solutions.
+Level authors may store private solution notes here.

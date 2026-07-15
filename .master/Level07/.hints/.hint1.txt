@@ -1,0 +1,2 @@
+Use grep -R 'START_NODE' challenge to locate the only starting record. Each
+NEXT= line is a relative path you can read with cat.

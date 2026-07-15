@@ -1,0 +1,1 @@
+grep can search for the marker text in a file: grep 'text' filename

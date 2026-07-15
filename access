@@ -1,0 +1,171 @@
+#!/usr/bin/env bash
+# Terminal Trials access gate. It verifies an admin-provided key and then
+# makes the next prepared sector available in runtime/current.
+
+set -euo pipefail
+
+GAME_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+
+. "$GAME_ROOT/.engine/ui.sh"
+. "$GAME_ROOT/.engine/progress.sh"
+. "$GAME_ROOT/.engine/timer.sh"
+. "$GAME_ROOT/.engine/runtime_manager.sh"
+. "$GAME_ROOT/.engine/logger.sh"
+. "$GAME_ROOT/.engine/unlock.sh"
+
+ensure_game_directories "$GAME_ROOT"
+runtime_restore_current "$GAME_ROOT"
+
+if ! progress_exists "$GAME_ROOT"; then
+    print_error "No active game found. Start Terminal Trials with ./start.sh first."
+    exit 1
+fi
+
+current_level=$(progress_get "$GAME_ROOT" CURRENT_LEVEL)
+team_name=$(progress_get "$GAME_ROOT" TEAM)
+status=$(progress_get "$GAME_ROOT" STATUS)
+
+if [ "$status" = "COMPLETE" ]; then
+    print_error "Mission already complete."
+    exit 1
+fi
+
+if [ "$current_level" -gt 7 ]; then
+    progress_mark_complete "$GAME_ROOT"
+    print_banner
+    printf '%b\n' "${TT_GREEN}MISSION COMPLETE${TT_RESET}"
+    exit 0
+fi
+
+print_recovery_message
+print_progress_animation "Authenticating clearance token"
+printf 'Enter Access Key: '
+IFS= read -r access_key || exit 1
+access_key=$(printf '%s' "$access_key" | tr -d '[:cntrl:]')
+
+if ! unlock_validate_progress "$GAME_ROOT" "$current_level"; then
+    print_denied
+    exit 1
+fi
+
+if ! unlock_validate_key "$GAME_ROOT" "$current_level" "$access_key"; then
+    print_denied
+    exit 1
+fi
+
+print_sector_completion() {
+    level=$1
+    seconds=$2
+    hints=$3
+    score=$4
+    average=$5
+    printf '%s\n' '=================================================='
+    printf '\n%s\n\n' 'MISSION COMPLETE'
+    printf '%s Completed\n\n' "$(sector_name_for_level "$level")"
+    printf '%s\n' 'Time Taken:'
+    printf '%s\n\n' "$(timer_format "$seconds")"
+    printf '%s\n' 'Hints Used:'
+    printf '%s / 2\n\n' "$hints"
+    printf '%s\n' 'Sector Score:'
+    printf '%s / 1000\n\n' "$score"
+    printf '%s\n' 'Current Tournament Average:'
+    printf '%s / 1000\n\n' "$average"
+    printf '%s\n\n' 'Loading next sector...'
+    printf '%s\n' '=================================================='
+}
+
+print_next_sector_welcome() {
+    level=$1
+    average=$2
+    objective=$3
+    printf '%s\n' '=================================================='
+    printf '\n%s\n\n' 'WELCOME'
+    printf '%s\n\n' "$(sector_name_for_level "$level")"
+    printf '%s\n' 'Objective'
+    printf '%s\n\n' "$objective"
+    printf '%s\n' 'Tournament Average'
+    printf '%s / 1000\n\n' "$average"
+    printf '%s\n\n' 'Sector Score reset to 1000.'
+    printf '%s\n' '=================================================='
+}
+
+print_final_summary() {
+    average=$1
+    tournament_time=$2
+    total_hints=$3
+    printf '%s\n' '=================================================='
+    printf '\n%s\n\n' 'MISSION COMPLETE'
+    printf '%s\n\n' 'Sector Scores'
+    for level in 1 2 3 4 5 6 7; do
+        score_key=$(progress_level_score_key "$level")
+        score=$(progress_get "$GAME_ROOT" "$score_key")
+        [ -n "$score" ] || score=0
+        printf '%-7s : %s\n' "$(sector_short_name_for_level "$level")" "$score"
+    done
+    printf '\n%s\n' 'Final Average:'
+    printf '%s / 1000\n\n' "$average"
+    printf '%s\n' 'Total Tournament Time'
+    printf '%s\n\n' "$tournament_time"
+    printf '%s\n' 'Total Hints Used'
+    printf '%s\n\n' "$total_hints"
+    printf '%s\n\n' 'Thank you for playing Terminal Trials.'
+    printf '%s\n' '=================================================='
+}
+
+if [ "$current_level" -eq 7 ]; then
+    level_seconds=$(timer_elapsed "$(progress_get "$GAME_ROOT" START_TIME)")
+    sector_hints=$(progress_current_sector_hints "$GAME_ROOT")
+    sector_score=$(progress_calculate_sector_score "$GAME_ROOT")
+    progress_record_sector_score "$GAME_ROOT" "$current_level" "$sector_score"
+    progress_set_value "$GAME_ROOT" ELAPSED_TIME "$level_seconds"
+    final_average=$(progress_average_scores "$GAME_ROOT" 7)
+    progress_set_value "$GAME_ROOT" FINAL_AVERAGE "$final_average"
+    total_seconds=$(progress_tournament_elapsed "$GAME_ROOT")
+    progress_set_value "$GAME_ROOT" TOTAL_TOURNAMENT_TIME "$total_seconds"
+    total_hints=$(progress_get "$GAME_ROOT" HINTS_USED)
+    [ -n "$total_hints" ] || total_hints=0
+    progress_mark_complete "$GAME_ROOT"
+    log_completion "$GAME_ROOT" "$team_name" "$current_level" "$level_seconds"
+    log_session_summary "$GAME_ROOT" "$team_name" "Completed"
+    print_final_summary "$final_average" "$(timer_format "$total_seconds")" "$total_hints"
+    exit 0
+fi
+
+next_level=$((current_level + 1))
+if ! runtime_level_exists "$GAME_ROOT" "$next_level"; then
+    print_error "Access key accepted, but the next sector is not prepared yet."
+    exit 1
+fi
+
+level_seconds=$(timer_elapsed "$(progress_get "$GAME_ROOT" START_TIME)")
+sector_hints=$(progress_current_sector_hints "$GAME_ROOT")
+sector_score=$(progress_calculate_sector_score "$GAME_ROOT")
+progress_record_sector_score "$GAME_ROOT" "$current_level" "$sector_score"
+progress_set_value "$GAME_ROOT" ELAPSED_TIME "$level_seconds"
+running_average=$(progress_average_scores "$GAME_ROOT" "$current_level")
+log_completion "$GAME_ROOT" "$team_name" "$current_level" "$level_seconds"
+print_sector_completion "$current_level" "$level_seconds" "$sector_hints" "$sector_score" "$running_average"
+sleep 2
+
+if ! runtime_deploy_level "$GAME_ROOT" "$next_level"; then
+    print_error "Unable to deploy the next sector to runtime/current."
+    exit 1
+fi
+
+progress_advance "$GAME_ROOT" "$next_level"
+objective=$(sed -n 's/^OBJECTIVE=//p' "$GAME_ROOT/runtime/current/.metadata.conf" | sed -n '1p')
+[ -n "$objective" ] || objective='Continue the recovery mission.'
+print_next_sector_welcome "$next_level" "$running_average" "$objective"
+
+if [ "${TT_NON_INTERACTIVE:-0}" = "1" ]; then
+    exit 0
+fi
+cd "$GAME_ROOT/runtime/current" || exit 1
+export TERMINAL_TRIALS_ROOT="$GAME_ROOT"
+case ":$PATH:" in
+    *":$GAME_ROOT:"*) ;;
+    *) PATH="$GAME_ROOT:$PATH" ;;
+esac
+export PATH
+hash -r 2>/dev/null || true
+exec bash --noprofile --rcfile "$GAME_ROOT/.engine/game_shell.rc" -i
