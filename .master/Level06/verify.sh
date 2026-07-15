@@ -20,7 +20,8 @@ expected_output='Dispatching NightShift to alpha
 Access key: '"$access_key"
 
 if [ "$output" = "$expected_output" ]; then
-    printf '%s\n' 'MISSION VERIFIED — Hash Map insight unlocked. \n Access Key: TT-MAP-6194'
+    printf '%s\n' 'MISSION VERIFIED — Hash Map insight unlocked.'
+    printf '%s\n' 'Access Key: TT-MAP-6194'
     exit 0
 fi
 
