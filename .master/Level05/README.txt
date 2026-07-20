@@ -12,20 +12,20 @@ Analyze the preserved history and recover the repeated next-level key.
 
 Allowed Commands
 ----------------
-history
-Shows commands that were previously entered in the shell.
-
 |
-Sends the output of one command into the next command.
+Sends the output of one command as input of the next command.
 
-grep
+grep "text" <file_name>
 Searches text and displays only lines containing matching text.
+
+uniq -d
+on a sorted file shows only the text that has been repeated multiple times
 
 Mission
 -------
 1. The process to follow is mentioned inside analysis_note.txt file inside challenge
 2. Use terminal_history file to view the recovered command stream.
-3. Use a small pipeline to narrow the stream to credential-looking lines.
+3. Use a small pipeline to narrow the stream to credential-looking lines ("TT" in the text)
 4. Identify the credential that appears more than once.
 5. Run `verify`, then run `access` after verification succeeds.
 

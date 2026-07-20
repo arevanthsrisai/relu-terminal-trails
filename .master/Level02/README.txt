@@ -12,16 +12,16 @@ Search the nested archive and recover its access key.
 
 Allowed Commands
 ----------------
-find
+find <path> -name <"pattern">
 Searches through folders recursively and prints paths that match what you are
 looking for.
 
 Mission
 -------
-1. Start from the current level directory.
-2. Use `find` to search through the archive instead of opening folders one by
+1. Start from the current/challenge directory.
+2. Use `find` to search through the archive directory instead of opening folders one by
    one.
-3. Read the path that matches the recovery clue and identify the key.
+3. Read the path that matches "*.archive" pattern and identify the key in the archive name.
 4. Run `verify`, then run `access` after verification succeeds.
 
 Hints Available

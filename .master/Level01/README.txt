@@ -12,22 +12,19 @@ Explore the office workspace and recover the Level 01 access key.
 
 Allowed Commands
 ----------------
-pwd
-Displays your current working directory.
-
 ls
 Lists the files and folders in your current location.
 
-cd
+cd <directory>
 Moves you into another folder or back toward a previous folder.
 
-cat
+cat <file_name>
 Displays the contents of a text file.
 
 Mission
 -------
-1. Use the allowed commands to understand where you are.
-2. Move through folders carefully and read files that look relevant.
+1. Use the allowed commands to understand where you are. Start the level from challenge/ directory.
+2. Move through folders carefully and read files that look relevant using cat.
 3. When you find an access key, run `verify`.
 4. If verification succeeds, run `access` to continue.
 

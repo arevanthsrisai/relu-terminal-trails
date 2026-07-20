@@ -12,14 +12,8 @@ Repair the shell script so it emits the dispatch message and access key.
 
 Allowed Commands
 ----------------
-variables
-Store values under names so a script can reuse them later.
-
-echo
-Prints text to the terminal.
-
-simple shell scripts
-Small Bash files can run several shell commands in order.
+nano <file_name>
+Edits text content of a file. use arrow keys to navigate. ctrl+x , y , enter to save the changes to the file
 
 double quotes
 Allow variables such as `$name` to expand into their stored values.
@@ -31,7 +25,7 @@ Mission
 -------
 1. Inspect the broken dispatch script.
 2. Repair its quoting so variable values expand correctly.
-3. Run the script and compare its output with the mission requirements.
+3. Run the script (./broken_dispatch.sh) and compare its output with the mission requirements.
 4. Run `verify`, then run `access` after verification succeeds.
 
 Hints Available
@@ -40,8 +34,11 @@ Hints Available
 
 Learning Outcome
 ----------------
-Assign shell variables, expand them with `$name` or `${name}`, and produce
-reliable output from a small Bash script.
+double quotes
+Allow variables such as `$name` to expand into their stored values.
+
+single quotes
+Print the characters inside them literally, without expanding variables.
 
 DSA Insight (displayed only after completion)
 ---------------------------------------------

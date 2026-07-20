@@ -105,7 +105,7 @@ progress_calculate_sector_score() {
     root=$1
     elapsed=$(progress_elapsed_since_start "$root")
     hints=$(progress_current_sector_hints "$root")
-    score=$((1000 - ((elapsed / 15) * 25) - (hints * 150)))
+    score=$((1000 - ((elapsed / 30) * 30) - (hints * 100)))
     if [ "$score" -lt 0 ]; then
         score=0
     fi

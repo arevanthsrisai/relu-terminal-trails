@@ -12,20 +12,20 @@ Order the corrupted log and recover the final access key from its endpoints.
 
 Allowed Commands
 ----------------
-sort
+sort <filename>
 Reorders lines of text so they appear in sorted order.
 
-head
+head <filename>
 Displays the first few lines of a file.
 
-tail
+tail <filename>
 Displays the last few lines of a file.
 
 Mission
 -------
 1. Work with the corrupted log as a large list of timestamped records which are unsorted.
-2. Create a recovered version whose records are in chronological order.
-3. Inspect only the beginning and end of the ordered result.
+2. Create a recovered version whose records are in chronological order (with file name recovered_log.txt).
+3. Inspect only the beginning and end of the ordered result (head and tail).
 4. Use the boundary records to determine what to submit to `verify`.
 5. Run `access` after verification succeeds.
 

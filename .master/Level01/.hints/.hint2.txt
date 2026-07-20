@@ -1,2 +1,2 @@
-The operations note mentions a desk drawer. Keep using ls and cd until you can
-read recovery_note.txt with cat.
+Keep using ls and cd until you can
+read recovery_note.txt with cat recovery_note.txt

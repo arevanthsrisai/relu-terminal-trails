@@ -1,5 +1,5 @@
-The authentic credential was issued repeatedly while decoy credentials were
-entered only once. Use terminal_history file to view the recovered commands, then use a
+The authentic credential was issued repeatedly while decoy credentials were entered only once.
+Use terminal_history file to view the recovered commands, then use a
 small `grep` pipeline to narrow the output to credential-looking lines.
-uniq -q returns only the repeated values
+uniq -d returns only the repeated values on a sorted file
 Preserve the command stream; do not manually edit history.

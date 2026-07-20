@@ -12,7 +12,7 @@ Locate the infected account in the employee database.
 
 Allowed Commands
 ----------------
-grep
+grep "text" <file_name>
 Searches inside a file and displays only the lines containing matching text.
 
 Mission

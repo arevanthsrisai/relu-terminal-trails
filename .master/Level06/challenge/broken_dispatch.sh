@@ -15,7 +15,6 @@ key_suffix='6194'
 # echo "$name" prints the value stored in the variable named name.
 # echo '$name' prints the characters $name.
 #
-# The two lines below are intentionally broken. Repair the quoting and variable
-# expansion without changing the intended values above.
+# The two lines below are intentionally broken. Repair the quoting.
 echo 'Dispatching $team_name to $sector'
 echo "Access key: ${key_prefix}-$key_suffix"
