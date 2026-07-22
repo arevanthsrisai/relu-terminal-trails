@@ -19,10 +19,10 @@ text search, file reading, and small shell steps.
 grep -R "text" <directory>
 for recursive search inside every file in a directory instead of a single file.
 
-head <file_name>
+head <file_name or path>
 Reads the beginning of a file.
 
-tail <file_name>
+tail <file_name or path>
 Reads the end of a file.
 
 Mission

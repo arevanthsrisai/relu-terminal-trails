@@ -1,2 +1,3 @@
+use 'nano broken_dispatch.sh' and follow the steps from README to save the file.
 Single quotes keep $variable text literal. Use double quotes when you need a
 variable's value to appear in output.

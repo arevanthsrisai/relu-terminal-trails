@@ -12,13 +12,13 @@ Order the corrupted log and recover the final access key from its endpoints.
 
 Allowed Commands
 ----------------
-sort <filename>
+sort <filename or path>
 Reorders lines of text so they appear in sorted order.
 
-head <filename>
+head <filename or path>
 Displays the first few lines of a file.
 
-tail <filename>
+tail <filename or path>
 Displays the last few lines of a file.
 
 Mission

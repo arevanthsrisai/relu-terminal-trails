@@ -1,4 +1,3 @@
 Try: sort corrupted_log.txt > recovered_log.txt
 or sort corrupted_log -o recovered_log.txt
-Then use head and tail on recovered_log.txt. Join the two fragments without a
-space.
+Then use head and tail on recovered_log.txt. Join the two fragments without a space.

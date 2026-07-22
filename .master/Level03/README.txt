@@ -12,14 +12,14 @@ Locate the infected account in the employee database.
 
 Allowed Commands
 ----------------
-grep "text" <file_name>
+grep "text" <file_name or path>
 Searches inside a file and displays only the lines containing matching text.
 
 Mission
 -------
 1. Treat the database as a large text file.
 2. Use `grep` to search for the infection marker (open incident marker inside challenge directory).
-3. Identify the account on the matching record. 
+3. Identify the account (2nd column) on the matching record. 
 4. Run `verify`, then run `access` after verification succeeds.
 
 Hints Available

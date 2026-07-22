@@ -15,7 +15,7 @@ Allowed Commands
 |
 Sends the output of one command as input of the next command.
 
-grep "text" <file_name>
+grep "text" <file_name or path>
 Searches text and displays only lines containing matching text.
 
 uniq -d

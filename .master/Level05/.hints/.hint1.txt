@@ -1,2 +1,2 @@
-Pipe terminal_history into `grep` and narrow the output to credential-looking lines.
+Pipe terminal_history into `grep` and narrow the output to credential-looking lines ('TT' in the text)
 Look for a pattern that appears more often than the others.

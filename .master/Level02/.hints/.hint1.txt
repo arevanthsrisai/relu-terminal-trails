@@ -1,1 +1,1 @@
-find can start at challenge/ and search recursively for a filename pattern.
+find can start at challenge/ and search recursively for a filename pattern using 'find'.

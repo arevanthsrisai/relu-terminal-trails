@@ -1,2 +1,2 @@
 Keep using ls and cd until you can
-read recovery_note.txt with cat recovery_note.txt
+read recovery_note.txt with 'cat recovery_note.txt'

@@ -18,7 +18,7 @@ Lists the files and folders in your current location.
 cd <directory>
 Moves you into another folder or back toward a previous folder.
 
-cat <file_name>
+cat <file_name or path>
 Displays the contents of a text file.
 
 Mission

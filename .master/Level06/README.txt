@@ -12,14 +12,9 @@ Repair the shell script so it emits the dispatch message and access key.
 
 Allowed Commands
 ----------------
-nano <file_name>
+nano <file_name or path>
 Edits text content of a file. use arrow keys to navigate. ctrl+x , y , enter to save the changes to the file
 
-double quotes
-Allow variables such as `$name` to expand into their stored values.
-
-single quotes
-Print the characters inside them literally, without expanding variables.
 
 Mission
 -------
